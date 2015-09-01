@@ -17,11 +17,13 @@
 'use strict';
 
 (function(global) {
+  // error backtrace supported
   function error(msg) {
     console.log(backtrace());
     throw new Error(msg);
   }
 
+  // backtrace print exception stack
   function backtrace() {
     try {
       throw new Error();
@@ -51,6 +53,7 @@
     }
   }
 
+  // JsonRPCRequest allocate json rpc request
   function JsonRPCRequest(params) {
     var settings = {
       version: '2.0'
